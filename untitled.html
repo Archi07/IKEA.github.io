@@ -25,7 +25,7 @@
             background: lightsteelblue;
             border: 0px;
             border-radius: 8px;
-            pointer-events: none;
+           
         }
         d.name{
             text-decoration: #3c53df;
@@ -52,8 +52,9 @@
         "name": "IKEA","size":1000,
         "children": [
             {
-                "name": "Table", 
+                "name": "Table",
                 "description":" <b>Extendable Table</b> <br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                 "children": [
                     {"name": "TP", "size": 3534},
 
@@ -386,20 +387,29 @@
                 return "15";
             })
             .style("fill", color)
-            .on("click", mouseover)
+            .on("dblclick", mouseover)
             //Tooltips
-            .on("mouseover", function(d) {
+            .on("mouseover", function(d) {           
                 div.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                div .html(d.description + "<br/>"  )
-                    .style("left", (d3.event.pageX) + "px")
+                    .duration(500)    
+                    .style("opacity", 0);
+                div.transition()
+                    .duration(200)    
+                    .style("opacity", .9);    
+                div .html(
+                    "<img src='/image/table-image.png'> "+
+                    "<br/>" +
+                    '<a href= "'+d.link+'" target="_blank">'  + // The first <a> tag
+                    d.name +
+                    "</a>" +                          // closing </a> tag
+                "<br/>"  + d.description)     
+                    .style("left", (d3.event.pageX) + "px")             
                     .style("top", (d3.event.pageY - 28) + "px");
-            })
+                })
             .on("mouseout", function(d) {
-                div.transition().duration(500).style("opacity", 0);
+                div.transition().duration(5000).style("opacity", 0);
             })
-            .call(force.drag);
+            //.call(force.drag);
         // Exit any old nodes.
         node.exit().remove();
         t = vis.selectAll(".t-node")
@@ -429,6 +439,7 @@
         t.attr("x", function(d) { return d.x; })
             .attr("y", function(d) { return d.y; });
     }
+
     // Color leaf nodes orange, and packages white or blue.
     function color(d) {
         //console.log(d);
@@ -436,6 +447,7 @@
             return "red";
         return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
     }
+
     // Toggle children on click.
     function mouseover(d) {
         if (d.children) {
