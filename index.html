@@ -17,12 +17,11 @@
         }
         div.tooltip {
             position: absolute;
-            text-align: center;
             width: auto;
             height: auto;
             padding: 3px;
             font: 12px sans-serif;
-            background: lightsteelblue;
+            background: white;
             border: 0px;
             border-radius: 8px;
            
@@ -48,51 +47,66 @@
     var vis = d3.select("#chart").append("svg:svg")
         .attr("width", w)
         .attr("height", h);
-    root = {
+   root = {
         "name": "IKEA","size":1000,
+        "description": " <br/>Customer service: 1 (888) 888-4532 <br/> Founder: Ingvar Kamprad <br/> Founded: 1943, Älmhult, Sweden <br/> Headquarters: Delft, Netherlands",
+        "link":"http://www.ikea.com/",
         "children": [
             {
-                "name": "Table",
-                "description":" <b>Extendable Table</b> <br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "name": "BJURSTA Extendable Table",
+                "description":"<br/>Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
                 "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
-                "image": "https://cloud.githubusercontent.com/assets/21251436/26473141/a03bfdac-415e-11e7-9610-1c154b66fc63.png",
+                "image": "/image/table-image.png",
                 "children": [
-                    {"name": "TP", "size": 3534},
+                    {
+                        "name": "TP", "size": 3534},
 
-                    {"name": "Table top/Leaf", 
-                     "description":" <b>Table top/Leaf</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
-                     "image":"https://cloud.githubusercontent.com/assets/21251436/26657838/38fab5d6-461b-11e7-8411-b6f342e737c1.jpg",
-                     "children": [
+                    {
+                        "name": "Table top/Leaf", 
+                        "description":" Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
+                        "children": [
                             {
                                 "name": "TP", "size": 3534},
                             {
-                                "name": "Particleboard", "description":" <b>Particleboard</b> <br/> Part ID: 12323 <br/> Tags:  <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "name": "Particleboard", 
+                                "description":" Part ID: 12323 <br/> Tags:  <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "TP", "size": 3534},
                                     {
-                                        "name": "injection-molded plastic", "description":" <b>injection-molded plastic</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                        "name": "injection-molded plastic", 
+                                        "description":" Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
-                                                "name": "TP", "size": 3534}
+                                                "name": "TP", 
+                                                "description":" Email: abc@gmail.com <br/> Contact Number: 53472348 ",
+                                            }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "id":2,"name": "Ash veneer", "description":" <b>Ash veneer</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                "name": "Ash veneer", 
+                                "description":" <b>Ash veneer</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "TP", "size": 3534},
                                     {
-                                        "name": "Ash wood", "description":" <b>Ash wood</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                        "name": "Ash wood", 
+                                        "description":" <b>Ash wood</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
                                         ]
                                     },
                                     {
-                                        "name": "feberboad", "description":" <b>feberboad</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                        "name": "feberboad", 
+                                        "description":" <b>feberboad</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
@@ -101,11 +115,15 @@
                                 ]
                             },
                             {
-                                "name": "Stain", "description":" <b>Stain</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                "name": "Stain", 
+                                "description":" <b>Stain</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {"name": "TP", "size": 3534},
                                     {
                                         "name": "Stain Wood",
+                                        "description":" <b>Stain Wood</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
@@ -113,12 +131,16 @@
                                     }
                                 ]
                             },
-                            { "name": "Clear acrylic lacquer", "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                            { "name": "Clear acrylic lacquer", 
+                            "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12123 <br/> Tags:  <br/> Country of origin: China",
+                            "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "TP", "size": 3534},
                                     {
                                         "name": "Acrylic",
+                                        "description":" <b>Table top/Leaf</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
@@ -130,9 +152,13 @@
                     },
                     {
                         "name": "Underframe",
+                        "description":" <b>Underframe</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                         "children": [
                             {
                                 "name": "Solid pine",
+                                "description":" <b>Solid pine</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "TP", "size": 3534}
@@ -140,6 +166,8 @@
                             },
                             {
                                 "name": "Stain",
+                                "description":" <b>Stain</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "TP", "size": 3534}
@@ -147,9 +175,13 @@
                             },
                             {
                                 "name": "Ash veneer",
+                                "description":" <b>Ash veneer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
                                         "name": "Ash wood",
+                                        "description":" <b>Ash wood</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
@@ -157,29 +189,25 @@
                                     },
                                     {
                                         "name": "feberboard",
+                                        "description":" <b>feberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                         "children": [
                                             {
                                                 "name": "TP", "size": 3534}
                                         ]
                                     },
                                     {
-                                        "name": "TP",
-                                        "children": [
-                                            {
-                                                "name": "Factory", "size": 3534}
-                                        ]
+                                        "name": "TP"
                                     }
                                 ]
                             },
                             {
                                 "name": "Clear acrylic lacquer",
+                                "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                                 "children": [
                                     {
-                                        "name": "TP",
-                                        "children": [
-                                            {
-                                                "name": "Factory", "size": 3534}
-                                        ]
+                                        "name": "TP"
                                     }
                                 ]
                             }
@@ -187,136 +215,324 @@
                     },
                     {
                         "name": "Legs",
+                        "description":" <b>Legs</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
                         "children": [
-                            {"name": "Particleboard",
-                                "size": 7074},
-                            {"name": "Ash veneer", "size": 3116}
+                            {
+                                "name": "Particleboard",
+                                "description":" <b>Particleboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
+                            },
+                            {
+                                "name": "Ash veneer", 
+                                "description":" <b>Ash veneer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/30116264/",
+                            }
                         ]
                     }
                 ]
             },
             {
-                "name": "cabinet with doors",
+                "name": "BRIMNES High cabinet with doors",
+                "description":"<br/> Article ID: 403.022.89 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
                 "children": [
                     {
-                        "name": "panel/Shelf",
+                        "name": "Panel/Shelf",
+                        "description":" <b>Panel/Shelf</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
                         "children": [
-                            {"name": "Particleboard", "size": 1983},
-                            {"name": "Foil", "size": 2047},
-                            {"name": "ABS plasti", "size": 1375}
+                            {
+                                "name": "Particleboard",
+                                "description":" <b>Particleboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            },
+                            {
+                                "name": "Foil", 
+                                "description":" <b>Foil</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            },
+                            {
+                                "name": "ABS plastic", 
+                                "description":" <b>ABS plastic</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            }
                         ]
                     },
                     {
                         "name": "Back",
+                        "description":" <b>Back</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
                         "children": [
-                            {"name": "Fiberboard", "size": 1983},
-                            {"name": "Printed acrylic paint", "size": 1375}
+                            {
+                                "name": "Fiberboard", 
+                                "description":" <b>Fiberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            },
+                            {
+                                "name": "Printed acrylic paint", 
+                                "description":" <b>Printed acrylic paint</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            }
                         ]
                     },
                     {
                         "name": "Leg/ Rail",
+                        "description":" <b>Leg/ Rail</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
                         "children": [
-                            {"name": "Foil", "size": 1983},
-                            {"name": "ABS plastic", "size": 1375},
-                            {"name": "Fiberboard", "size": 1375}
+                            {
+                                "name": "Foil",
+                                "description":" <b>Foilf</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            },
+                            {
+                                "name": "ABS plastic",
+                                "description":" <b>ABS plastic</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            },
+                            {
+                                "name": "Fiberboard",
+                                "description":" <b>Fiberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/40302289/",
+                            }
                         ]
                     }
                 ]
             },
             {
-                "name": "Book display",
+                "name": "FLISAT Doll house/wall shelf",
+                "description":"<br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
                 "children": [
                     {
                         "name": "Main parts",
+                        "description":" <b>Main parts</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
                         "children": [
-                            {"name": "Particleboard", "size": 721},
-                            {"name": "Printed acrylic paint", "size": 4294},
-                            {"name": "ABS plastic", "size": 9800}
+                            {
+                                "name": "Particleboard", 
+                                "description":" <b>Particleboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            },
+                            {
+                                "name": "Printed acrylic paint", 
+                                "description":" <b>Printed acrylic paint</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            },
+                            {
+                                "name": "ABS plastic",
+                                "description":" <b>ABS plastic</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            }
                         ]
                     },
                     {
                         "name": "Adjustable shelf",
+                        "description":" <b>Adjustable shelf</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
                         "children": [
-                            {"name": "Particleboard", "size": 721},
-                            {"name": "Fiberboard", "size": 4294}
+                            {
+                                "name": "Particleboard", 
+                                "description":" <b>Particleboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            },
+                            {
+                                "name": "Fiberboard", 
+                                "description":" <b>Fiberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            }
                         ]
                     },
                     {
                         "name": "Back panel",
+                        "description":" <b>Back panel</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
                         "children": [
-                            {"name": "Fiberboard", "size": 721},
-                            {"name": "Foil", "size": 4294}
+                            {
+                                "name": "Fiberboard", 
+                                "description":" <b>Fiberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            },
+                            {
+                                "name": "Foil",
+                                "description":" <b>Foil</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/50290785/",
+                            }
                         ]
                     }
                 ]
             },
             {
-                "name": "Mirror",
+                "name": "HEMNES Mirror",
+                "description":" <br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
                 "children": [
                     {
                         "name": "Metal parts",
+                        "description":" <b>Metal parts</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
                         "children": [
-                            {"name": "Galvanized steel", "size": 721},
-                            {"name": "Epoxy/polyester powder coating", "size": 4294}
+                            {
+                                "name": "Galvanized steel", 
+                                "description":" <b>Galvanized steel</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
+                            },
+                            {
+                                "name": "Epoxy/polyester powder coating", 
+                                "description":" <b>Epoxy/polyester powder coating</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
+                            }
                         ]
                     },
                     {
                         "name": "Mirror glass",
+                        "description":" <b>Mirror Glass</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
                         "children": [
-                            {"name": "Glass", "size": 721},
-                            {"name": "Acrylic paint", "size": 4294}
+                            {
+                                "name": "Glass", 
+                                "description":" <b>Glass</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
+                            },
+                            {
+                                "name": "Acrylic paint", 
+                                "description":" <b>Acrylic paint</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/10121252/",
+                            }
                         ]
                     }
                 ]
             },
             {
-                "name": "Chair",
+                "name": "INGOLF Chair",
+                "description":"<br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
                 "children": [
                     {
                         "name": "Frame",
                         "children": [
-                            {"name": "Solid beech", "size": 1082},
-                            {"name": "Stain", "size": 1336},
-                            {"name": "Clear acrylic lacquer", "size": 319}
+                            {
+                                "name": "Solid beech", 
+                                "description":" <b>Solid beech</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Stain", 
+                                "description":" <b>Stain</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Clear acrylic lacquer", 
+                                "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            }
                         ]
                     },
                     {"name": "Seat",
+                    "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
                         "children": [
-                            {"name": "Molded layer-glued wood veneer", "size": 1082},
-                            {"name": "Beech veneer", "size": 1336},
-                            {"name": "Stain", "size": 319},
-                            {"name": "Clear acrylic lacquer", "size": 1336}
+                            {
+                                "name": "Molded layer-glued wood veneer", 
+                                "description":" <b>Molded layer-glued wood veneer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Beech veneer", 
+                                "description":" <b>Beech veneer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Stain", 
+                                "description":" <b>Stain</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Clear acrylic lacquer", 
+                                "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            }
                         ]
                     },
                     {
                         "name": "Backrest",
+                        "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
                         "children": [
-                            {"name": "Molded layer-glued wood veneer", "size": 1082},
-                            {"name": "Solid beech", "size": 1336},
-                            {"name": "Stain", "size": 319},
-                            {"name": "Clear acrylic lacquer", "size": 1336}
+                            {
+                                "name": "Molded layer-glued wood veneer",
+                                "description":" <b>Molded layer-glued wood veneer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Solid beech", 
+                                "description":" <b>Solid beech</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Stain", 
+                                "description":" <b>Stain</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            },
+                            {
+                                "name": "Clear acrylic lacquer", 
+                                "description":" <b>Clear acrylic lacquer</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/70103250/",
+                            }
                         ]
                     }
                 ]
             },
             {
-                "name": "Desk",
+                "name": "MICKE Desk",
+                "description":" <br/> Article ID: 301.162.64 <br/> Tags: Dining,Table,Wood <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
                 "children": [
                     {
                         "name": "Desk top",
+                        "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
                         "children": [
-                            {"name": "Particleboard", "size": 1082},
-                            {"name": "Paper", "size": 1336},
-                            {"name": "Fiberboard", "size": 1336},
-                            {"name": "Acrylic paint", "size": 319},
-                            {"name": "ABS plastic", "size": 1336}
+                            {
+                                "name": "Particleboard",
+                                "description":" <b>Particleboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            },
+                            {
+                                "name": "Paper", 
+                                "description":" <b>Paper</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            },
+                            {
+                                "name": "Fiberboard", 
+                                "description":" <b>Fiberboard</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            },
+                            {
+                                "name": "Acrylic paint", 
+                                "description":" <b>Acrylic paint</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            },
+                            {
+                                "name": "ABS plastic", 
+                                "description":" <b>ABS plastic</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            }
                         ]
                     },
                     {
                         "name": "Underframe for table top",
+                        "description":" <b>Underframe for table top</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                        "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
                         "children": [
-                            {"name": "Steel", "size": 1082},
-                            {"name": "Pigmented epoxy/polyester powder coating", "size": 1336}
+                            {
+                                "name": "Steel", 
+                                "description":" <b>Steel</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            },
+                            {
+                                "name": "Pigmented epoxy/polyester powder coating", 
+                                "description":" <b>Pigmented epoxy/polyester powder coating</b> <br/> Part ID: 12454 <br/> Tags: Wood, Stain, Ash veneer <br/> Color: Black <br/> Material: Wood <br/> Country of origin: China",
+                                "link": "http://www.ikea.com/us/en/catalog/products/90214308/",
+                            }
                         ]
                     }
                 ]
@@ -386,7 +602,19 @@
             .attr("cy", function(d) { return d.y; })
             .attr("r",  function (d) {
                 if(d.name === "IKEA")
-                    return "22" ;
+                   return "25" ;
+                else if(d.name === "MICKE Desk")
+                    return "20"
+                else if(d.name === "INGOLF Chair")
+                    return "20"
+                else if(d.name === "FLISAT Doll house/wall shelf")
+                    return "20"
+                else if(d.name === "BRIMNES High cabinet with doors")
+                    return "20"
+                else if(d.name === "BJURSTA Extendable Table")
+                    return "20"
+                else if(d.name === "HEMNES Mirror")
+                    return "20"
                 return "15";
             })
             .style("fill", color)
@@ -410,14 +638,14 @@
                     .style("top", (d3.event.pageY - 28) + "px");
                 })
             .on("mouseout", function(d) {
-                div.transition().duration(5000).style("opacity", 0);
+                div.transition().duration(3000).style("opacity", 0);
             })
-            //.call(force.drag);
+            .call(force.drag);
         // Exit any old nodes.
         node.exit().remove();
         t = vis.selectAll(".t-node")
             .data(nodes, function(d) { return d.id; })
-            .style("fill", color);
+            .style("fill", "black");
         // Enter any new nodes.
         t.enter().append("svg:text")
             .attr("class", "t-node")
@@ -447,7 +675,7 @@
     function color(d) {
         //console.log(d);
         if(d.name === "IKEA")
-            return "red";
+            return "#62eaab";
         return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
     }
 
